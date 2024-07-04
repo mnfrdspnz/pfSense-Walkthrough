@@ -1,0 +1,35 @@
+<configuration>
+    <openvpn>
+        <server>
+            <description>Remote Access VPN</description>
+            <servermode>remote_access</servermode>
+            <protocol>udp</protocol>
+            <device_mode>tun</device_mode>
+            <interface>wan</interface>
+            <local_port>1194</local_port>
+            <crypto>AES-256-CBC</crypto>
+            <authmode>Local Database</authmode>
+            <tunnel_network>10.8.0.0/24</tunnel_network>
+            <local_network>192.168.1.0/24</local_network>
+            <compression>lz4</compression>
+            <dns_domain>localdomain</dns_domain>
+            <dns_server1>8.8.8.8</dns_server1>
+            <dns_server2>8.8.4.4</dns_server2>
+        </server>
+    </openvpn>
+    <wireguard>
+        <interface>
+            <name>wg0</name>
+            <address>10.10.10.1/24</address>
+            <port>51820</port>
+            <peers>
+                <peer>
+                    <public_key>peer_public_key</public_key>
+                    <allowed_ips>10.10.10.2/32</allowed_ips>
+                    <endpoint>peer_endpoint:51820</endpoint>
+                </peer>
+            </peers>
+        </interface>
+    </wireguard>
+</configuration>
+

@@ -1,0 +1,47 @@
+<configuration>
+    <vlans>
+        <vlan>
+            <interface>em0</interface>
+            <tag>10</tag>
+            <description>Management VLAN</description>
+            <ipaddress>192.168.10.1</ipaddress>
+            <subnetmask>24</subnetmask>
+        </vlan>
+        <vlan>
+            <interface>em0</interface>
+            <tag>20</tag>
+            <description>Guest VLAN</description>
+            <ipaddress>192.168.20.1</ipaddress>
+            <subnetmask>24</subnetmask>
+        </vlan>
+    </vlans>
+    <subnets>
+        <subnet>
+            <vlan>10</vlan>
+            <iprange>
+                <from>192.168.10.100</from>
+                <to>192.168.10.200</to>
+            </iprange>
+            <gateway>192.168.10.1</gateway>
+            <dnsservers>
+                <dns>8.8.8.8</dns>
+                <dns>8.8.4.4</dns>
+            </dnsservers>
+            <description>Management Subnet</description>
+        </subnet>
+        <subnet>
+            <vlan>20</vlan>
+            <iprange>
+                <from>192.168.20.100</from>
+                <to>192.168.20.200</to>
+            </iprange>
+            <gateway>192.168.20.1</gateway>
+            <dnsservers>
+                <dns>8.8.8.8</dns>
+                <dns>8.8.4.4</dns>
+            </dnsservers>
+            <description>Guest Subnet</description>
+        </subnet>
+    </subnets>
+</configuration>
+

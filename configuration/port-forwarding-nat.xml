@@ -1,0 +1,43 @@
+<configuration>
+    <nat>
+        <port_forward>
+            <rule>
+                <interface>wan</interface>
+                <protocol>tcp</protocol>
+                <source>
+                    <address>any</address>
+                    <port>any</port>
+                </source>
+                <destination>
+                    <address>wan_address</address>
+                    <port>80</port>
+                </destination>
+                <redirect>
+                    <ip>192.168.1.100</ip>
+                    <port>80</port>
+                </redirect>
+                <description>Port forward HTTP to internal web server</description>
+                <logging>true</logging>
+            </rule>
+            <rule>
+                <interface>wan</interface>
+                <protocol>tcp</protocol>
+                <source>
+                    <address>any</address>
+                    <port>any</port>
+                </source>
+                <destination>
+                    <address>wan_address</address>
+                    <port>443</port>
+                </destination>
+                <redirect>
+                    <ip>192.168.1.101</ip>
+                    <port>443</port>
+                </redirect>
+                <description>Port forward HTTPS to internal web server</description>
+                <logging>true</logging>
+            </rule>
+        </port_forward>
+    </nat>
+</configuration>
+

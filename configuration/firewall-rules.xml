@@ -1,0 +1,52 @@
+<configuration>
+    <firewall>
+        <rules>
+            <rule>
+                <action>pass</action>
+                <interface>lan</interface>
+                <protocol>tcp</protocol>
+                <source>
+                    <address>192.168.1.0/24</address>
+                    <port>any</port>
+                </source>
+                <destination>
+                    <address>any</address>
+                    <port>any</port>
+                </destination>
+                <description>Allow LAN to any</description>
+                <logging>true</logging>
+            </rule>
+            <rule>
+                <action>block</action>
+                <interface>lan</interface>
+                <protocol>tcp</protocol>
+                <source>
+                    <address>192.168.1.0/24</address>
+                    <port>any</port>
+                </source>
+                <destination>
+                    <address>192.168.1.100</address>
+                    <port>80</port>
+                </destination>
+                <description>Block LAN access to 192.168.1.100 on port 80</description>
+                <logging>true</logging>
+            </rule>
+            <rule>
+                <action>pass</action>
+                <interface>wan</interface>
+                <protocol>tcp</protocol>
+                <source>
+                    <address>any</address>
+                    <port>any</port>
+                </source>
+                <destination>
+                    <address>192.168.1.100</address>
+                    <port>80</port>
+                </destination>
+                <description>Allow WAN to 192.168.1.100 on port 80</description>
+                <logging>true</logging>
+            </rule>
+        </rules>
+    </firewall>
+</configuration>
+

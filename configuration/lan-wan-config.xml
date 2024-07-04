@@ -1,0 +1,16 @@
+<configuration>
+    <interfaces>
+        <interface>
+            <name>lan</name>
+            <ipaddress>192.168.1.1</ipaddress>
+            <subnetmask>24</subnetmask>
+            <description>LAN Interface</description>
+        </interface>
+        <interface>
+            <name>wan</name>
+            <ipaddress>dhcp</ipaddress>
+            <description>WAN Interface</description>
+        </interface>
+    </interfaces>
+</configuration>
+

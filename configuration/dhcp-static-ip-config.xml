@@ -1,0 +1,32 @@
+<configuration>
+    <dhcp>
+        <interface>
+            <name>lan</name>
+            <range>
+                <from>192.168.1.100</from>
+                <to>192.168.1.200</to>
+            </range>
+            <gateway>192.168.1.1</gateway>
+            <dnsservers>
+                <dns>8.8.8.8</dns>
+                <dns>8.8.4.4</dns>
+            </dnsservers>
+            <description>DHCP configuration for LAN</description>
+        </interface>
+        <static_assignments>
+            <assignment>
+                <mac_address>00:11:22:33:44:55</mac_address>
+                <ipaddress>192.168.1.50</ipaddress>
+                <hostname>device1</hostname>
+                <description>Static IP for Device 1</description>
+            </assignment>
+            <assignment>
+                <mac_address>66:77:88:99:AA:BB</mac_address>
+                <ipaddress>192.168.1.51</ipaddress>
+                <hostname>device2</hostname>
+                <description>Static IP for Device 2</description>
+            </assignment>
+        </static_assignments>
+    </dhcp>
+</configuration>
+

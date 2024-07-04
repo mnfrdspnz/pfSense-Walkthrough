@@ -1,0 +1,26 @@
+<configuration>
+    <qos>
+        <interface>lan</interface>
+        <queues>
+            <queue>
+                <name>high_priority</name>
+                <priority>7</priority>
+                <bandwidth>10Mbps</bandwidth>
+                <description>High Priority Traffic</description>
+            </queue>
+            <queue>
+                <name>default</name>
+                <priority>4</priority>
+                <bandwidth>50Mbps</bandwidth>
+                <description>Default Priority Traffic</description>
+            </queue>
+            <queue>
+                <name>low_priority</name>
+                <priority>1</priority>
+                <bandwidth>5Mbps</bandwidth>
+                <description>Low Priority Traffic</description>
+            </queue>
+        </queues>
+    </qos>
+</configuration>
+

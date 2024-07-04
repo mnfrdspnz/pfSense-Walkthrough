@@ -1,0 +1,29 @@
+<configuration>
+    <dns>
+        <resolver>
+            <enabled>true</enabled>
+            <dns1>8.8.8.8</dns1>
+            <dns2>8.8.4.4</dns2>
+            <domain>localdomain</domain>
+            <search_domains>
+                <domain>localdomain</domain>
+            </search_domains>
+        </resolver>
+    </dns>
+    <dhcp>
+        <interface>
+            <name>lan</name>
+            <range>
+                <from>192.168.1.100</from>
+                <to>192.168.1.200</to>
+            </range>
+            <gateway>192.168.1.1</gateway>
+            <dnsservers>
+                <dns>8.8.8.8</dns>
+                <dns>8.8.4.4</dns>
+            </dnsservers>
+            <description>DHCP configuration for LAN</description>
+        </interface>
+    </dhcp>
+</configuration>
+
